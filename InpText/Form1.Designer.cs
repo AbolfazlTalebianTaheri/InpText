@@ -43,6 +43,7 @@
             this.txtInputText.Size = new System.Drawing.Size(100, 22);
             this.txtInputText.TabIndex = 0;
             this.txtInputText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInputText_KeyPress);
+            this.txtInputText.MouseHover += new System.EventHandler(this.txtInputText_MouseHover);
             // 
             // txtInputChar
             // 
@@ -52,6 +53,7 @@
             this.txtInputChar.Size = new System.Drawing.Size(100, 22);
             this.txtInputChar.TabIndex = 1;
             this.txtInputChar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInputText_KeyPress);
+            this.txtInputChar.MouseHover += new System.EventHandler(this.txtInputChar_MouseHover);
             // 
             // btnListWord
             // 
@@ -91,7 +93,7 @@
             this.lblResult.AutoSize = true;
             this.lblResult.Location = new System.Drawing.Point(12, 87);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(48, 17);
+            this.lblResult.Size = new System.Drawing.Size(37, 16);
             this.lblResult.TabIndex = 3;
             this.lblResult.Text = "..........";
             this.lblResult.Visible = false;

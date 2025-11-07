@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace InpText
 {
@@ -16,6 +18,7 @@ namespace InpText
         {
             InitializeComponent();
         }
+
         private void txtInputText_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '\b' || e.KeyChar == ' ')
@@ -26,35 +29,76 @@ namespace InpText
 
         private void btnListWord_Click(object sender, EventArgs e)
         {
-            if (txtInputText.Text != "")
+             if (txtInputText.Text != "" && txtInputChar.Text != "")
             {
                 lblResult.Visible = true;
                 string temp = txtInputText.Text;
-                lblResult.Text = temp;
+                string te = txtInputChar.Text;
+                string result = "";
+                bool bre = false;
+                for(int i=0; i<temp.Length;i++)
+                {
+                    if (temp[i].ToString() == te)
+                        for (int j = i; j >= 0; j--)
+                            if (temp[j] == ' ' || j == 0)
+                            {
+                                int J = j;
+                                if(j==0)
+                                    J = j;
+                                else
+                                    J = j+1;
+                                for (int k = J; k < temp.Length; k++)
+                                {
+                                    if (temp[k] == ' ' || k == temp.Length)
+                                    {
+                                        lblResult.Visible = true;
+                                        lblResult.Text = result;
+                                        i = k;
+                                        break;
+                                    }
+                                    result += temp[k];
+                                    bre = true;
+                                }
+                                if(bre)
+                                {
+                                    bre = false;
+                                    result += " ";
+                                    break;
+                                    
+                                }
+                            }
+                    lblResult.Text = result;
+                }
             }
             else
             {
-                MessageBox.Show("لطفا کادر را پر کنید");
+                MessageBox.Show("لطفا کادر ها را پر کنید");
                 lblResult.Visible = false;
             }
         }
 
         private void btnWord_Click(object sender, EventArgs e)
         {
-            if (txtInputText.Text != "")
+            if (txtInputText.Text != "" && txtInputChar.Text != "")
             {
                 lblResult.Visible = true;
-                string inText = txtInputText.Text;
-                int number = 1;
-                for (int i = 0; i < inText.Length; i++)
-                    if (i < inText.Length - 1)
-                        if (inText[i] == ' ' && inText[i + 1] != ' ')
-                            number++;
+                string inText = txtInputChar.Text;
+                string temp = txtInputText.Text;
+                int number = 0;
+                for (int i = 0; i < temp.Length; i++)
+                    if (temp[i].ToString() == inText)
+                        for (int j = i; j < temp.Length; j++)
+                            if (temp[j].ToString() == " " || j==temp.Length-1)
+                            {
+                                number++;
+                                i = j;
+                                break;
+                            }
                 lblResult.Text = number.ToString();
             }
             else
             {
-                MessageBox.Show("لطفا کادر را پر کنید");
+                MessageBox.Show("لطفا کادر ها را پر کنید");
                 lblResult.Visible = false;
             }
         }
@@ -78,5 +122,16 @@ namespace InpText
             }
         }
 
+        private void txtInputText_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip textIn = new ToolTip();
+            textIn.SetToolTip(txtInputText,"در اینجا متن خود را وارد کنید");
+        }
+
+        private void txtInputChar_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip textIn = new ToolTip();
+            textIn.SetToolTip(txtInputChar, "در اینجا کاراکتر مورد نظر را وارد کنید");
+        }
     }
 }
