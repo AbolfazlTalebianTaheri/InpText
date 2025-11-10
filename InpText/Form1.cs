@@ -18,7 +18,15 @@ namespace InpText
         {
             InitializeComponent();
         }
+        void outPut_Message(int Importance =0)
+        {
+            if (Importance == 0)
+                MessageBox.Show("لطفا کادر ها را پر کنید");
+            else
+                MessageBox.Show("لطفا هر دو کادر را پر کنید");
 
+                lblResult.Visible = false;
+        }
         private void txtInputText_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '\b' || e.KeyChar == ' ')
@@ -71,10 +79,7 @@ namespace InpText
                 }
             }
             else
-            {
-                MessageBox.Show("لطفا کادر ها را پر کنید");
-                lblResult.Visible = false;
-            }
+                outPut_Message();
         }
 
         private void btnWord_Click(object sender, EventArgs e)
@@ -97,10 +102,7 @@ namespace InpText
                 lblResult.Text = number.ToString();
             }
             else
-            {
-                MessageBox.Show("لطفا کادر ها را پر کنید");
-                lblResult.Visible = false;
-            }
+                outPut_Message();
         }
 
         private void btnChar_Click(object sender, EventArgs e)
@@ -116,10 +118,7 @@ namespace InpText
                 lblResult.Text = number.ToString();
             }
             else
-            {
-                MessageBox.Show("لطفا کادر پایینی راهم پر کنید");
-                lblResult.Visible = false;
-            }
+                outPut_Message(1);
         }
 
         private void txtInputText_MouseHover(object sender, EventArgs e)
