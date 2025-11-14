@@ -27,6 +27,13 @@ namespace InpText
 
                 lblResult.Visible = false;
         }
+        bool Empty_check (string inputxt , string inChar)
+        {
+            if(inputxt != "" && inChar != "")
+            return true;
+            else
+                return false;
+        }
         private void txtInputText_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '\b' || e.KeyChar == ' ')
@@ -37,7 +44,10 @@ namespace InpText
 
         private void btnListWord_Click(object sender, EventArgs e)
         {
-             if (txtInputText.Text != "" && txtInputChar.Text != "")
+            string inptxt =txtInputText.Text;
+            string inchar = txtInputChar.Text;
+            bool not_Empty = Empty_check(inptxt , inchar);
+             if (not_Empty)
             {
                 lblResult.Visible = true;
                 string temp = txtInputText.Text;
@@ -84,7 +94,10 @@ namespace InpText
 
         private void btnWord_Click(object sender, EventArgs e)
         {
-            if (txtInputText.Text != "" && txtInputChar.Text != "")
+            string inptxt = txtInputText.Text;
+            string inchar = txtInputChar.Text;
+            bool not_Empty = Empty_check(inptxt, inchar);
+            if (not_Empty)
             {
                 lblResult.Visible = true;
                 string inText = txtInputChar.Text;
@@ -107,7 +120,10 @@ namespace InpText
 
         private void btnChar_Click(object sender, EventArgs e)
         {
-            if (txtInputText.Text != "" && txtInputChar.Text != "")
+            string inptxt = txtInputText.Text;
+            string inchar = txtInputChar.Text;
+            bool not_Empty = Empty_check(inptxt, inchar);
+            if (not_Empty)
             {
                 lblResult.Visible = true;
                 string inChar = txtInputChar.Text.ToLower();

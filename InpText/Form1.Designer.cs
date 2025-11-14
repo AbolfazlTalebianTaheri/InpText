@@ -34,6 +34,8 @@
             this.btnChar = new System.Windows.Forms.Button();
             this.btnWord = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
+            this.lbltxt = new System.Windows.Forms.Label();
+            this.lblChar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtInputText
@@ -98,11 +100,31 @@
             this.lblResult.Text = "..........";
             this.lblResult.Visible = false;
             // 
+            // lbltxt
+            // 
+            this.lbltxt.AutoSize = true;
+            this.lbltxt.Location = new System.Drawing.Point(197, 61);
+            this.lbltxt.Name = "lbltxt";
+            this.lbltxt.Size = new System.Drawing.Size(24, 16);
+            this.lbltxt.TabIndex = 4;
+            this.lbltxt.Text = "متن";
+            // 
+            // lblChar
+            // 
+            this.lblChar.AutoSize = true;
+            this.lblChar.Location = new System.Drawing.Point(197, 109);
+            this.lblChar.Name = "lblChar";
+            this.lblChar.Size = new System.Drawing.Size(44, 16);
+            this.lblChar.TabIndex = 4;
+            this.lblChar.Text = "کارکتر";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(266, 219);
+            this.Controls.Add(this.lblChar);
+            this.Controls.Add(this.lbltxt);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnWord);
             this.Controls.Add(this.btnChar);
@@ -126,6 +148,8 @@
         private System.Windows.Forms.Button btnChar;
         private System.Windows.Forms.Button btnWord;
         private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Label lbltxt;
+        private System.Windows.Forms.Label lblChar;
     }
 }
 
