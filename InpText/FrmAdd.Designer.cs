@@ -41,6 +41,7 @@
             // 
             // txtName
             // 
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.Location = new System.Drawing.Point(61, 38);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 22);
@@ -57,6 +58,7 @@
             // 
             // txtlastName
             // 
+            this.txtlastName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtlastName.Location = new System.Drawing.Point(61, 80);
             this.txtlastName.Name = "txtlastName";
             this.txtlastName.Size = new System.Drawing.Size(100, 22);
@@ -73,6 +75,7 @@
             // 
             // txtNationalCode
             // 
+            this.txtNationalCode.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNationalCode.Location = new System.Drawing.Point(61, 131);
             this.txtNationalCode.Name = "txtNationalCode";
             this.txtNationalCode.Size = new System.Drawing.Size(100, 22);
@@ -98,16 +101,18 @@
             // 
             // btnConfirmation
             // 
+            this.btnConfirmation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirmation.Location = new System.Drawing.Point(83, 222);
             this.btnConfirmation.Name = "btnConfirmation";
             this.btnConfirmation.Size = new System.Drawing.Size(93, 40);
-            this.btnConfirmation.TabIndex = 4;
+            this.btnConfirmation.TabIndex = 5;
             this.btnConfirmation.Text = "Confirmation";
             this.btnConfirmation.UseVisualStyleBackColor = true;
             this.btnConfirmation.Click += new System.EventHandler(this.btnConfirmation_Click);
             // 
             // cmbGgender
             // 
+            this.cmbGgender.Cursor = System.Windows.Forms.Cursors.NoMoveVert;
             this.cmbGgender.FormattingEnabled = true;
             this.cmbGgender.Items.AddRange(new object[] {
             "Man",
@@ -115,9 +120,9 @@
             this.cmbGgender.Location = new System.Drawing.Point(55, 181);
             this.cmbGgender.Name = "cmbGgender";
             this.cmbGgender.Size = new System.Drawing.Size(121, 24);
-            this.cmbGgender.TabIndex = 6;
+            this.cmbGgender.TabIndex = 4;
             // 
-            // FrmAddOeRemove
+            // FrmAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -131,8 +136,8 @@
             this.Controls.Add(this.txtNationalCode);
             this.Controls.Add(this.txtlastName);
             this.Controls.Add(this.txtName);
-            this.Name = "FrmAddOeRemove";
-            this.Text = "FrmAddOeRemove";
+            this.Name = "FrmAdd";
+            this.Text = "FrmAdd";
             this.ResumeLayout(false);
             this.PerformLayout();
 

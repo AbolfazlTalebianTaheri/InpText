@@ -23,13 +23,14 @@ namespace InpText
             string lastName = txtlastName.Text;
             string nationalCode = txtNationalCode.Text;
             string gender = cmbGgender.Text;
-            if (name != "" && lastName != "" && nationalCode != "")
+            //if (name != "" && lastName != "" && nationalCode != "")
+            if(!(string.IsNullOrEmpty(name) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(nationalCode) || string.IsNullOrEmpty(gender)))
             {
                     var person = new Person();
                     person.Name = name;
                     person.lastname = lastName;
                     person.National_code = nationalCode;
-                    person.gender = gender;
+                    person.Gender = gender;
                     var frm = Application.OpenForms[nameof(FrmPerson)] as FrmPerson;
                     frm.Persson.Add(person);
                 txtName.Clear();

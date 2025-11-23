@@ -12,6 +12,6 @@ namespace InpText
         public string Name { get; set; }
         public string lastname { get; set; }
         public string National_code { get; set; }
-        public string gender { get; set; }
+        public string Gender { get; set; }
     }
 }
