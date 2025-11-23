@@ -59,6 +59,9 @@ namespace InpText
                     bool successful = EditPerson.Successful_Operation;
                     if (successful)
                     {
+                        DataGridViewRow selectedRow = dgvPerson.SelectedRows[0];
+                        Person selctedPerson = (Person)selectedRow.DataBoundItem;
+                        Persson.Remove(selctedPerson);
                         dgvPerson.DataSource = null;
                         RefreshDgv();
                         EditPerson.successful = false;

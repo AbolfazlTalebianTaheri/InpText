@@ -33,7 +33,8 @@ namespace InpText
                     txtName.Clear();
                     txtlastName.Clear();
                     txtNationalCode.Clear();
-                    cmbGgender.Text = "";   
+                    cmbGgender.Text = "";
+                    this.Close();
                 }
                 else
                     MessageBox.Show("Fill in all the boxes.");
