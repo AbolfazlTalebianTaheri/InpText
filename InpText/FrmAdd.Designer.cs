@@ -80,6 +80,8 @@
             this.txtNationalCode.Name = "txtNationalCode";
             this.txtNationalCode.Size = new System.Drawing.Size(100, 22);
             this.txtNationalCode.TabIndex = 2;
+            this.txtNationalCode.TextChanged += new System.EventHandler(this.txtNationalCode_TextChanged);
+            this.txtNationalCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNationalCode_KeyPress);
             // 
             // lblNationalCode
             // 
@@ -102,6 +104,7 @@
             // btnConfirmation
             // 
             this.btnConfirmation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmation.Enabled = false;
             this.btnConfirmation.Location = new System.Drawing.Point(83, 222);
             this.btnConfirmation.Name = "btnConfirmation";
             this.btnConfirmation.Size = new System.Drawing.Size(93, 40);

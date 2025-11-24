@@ -34,11 +34,28 @@ namespace InpText
                     txtlastName.Clear();
                     txtNationalCode.Clear();
                     cmbGgender.Text = "";
+                    MessageBox.Show("Person edited successfully.");
                     this.Close();
                 }
                 else
-                    MessageBox.Show("Fill in all the boxes.");
+                    MessageBox.Show("Enter the information correctly.");
             }
+        }
+
+        private void txtNationalCode_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNationalCode.Text.Length >= 10)
+                btnConfirmation.Enabled = true;
+            else
+                btnConfirmation.Enabled = false;
+        }
+
+        private void txtNationalCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\b')
+                return;
+            if(!char.IsNumber(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 using System.Windows.Forms;
 namespace InpText
 {
-    public class EditPerson
+    internal class AddPeson
     {
-        static int house_number;
         public bool Info(string name, string lastName, string national_Code, string gender)
         {
             if (!(string.IsNullOrEmpty(name) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(national_Code) || string.IsNullOrEmpty(gender)))
@@ -18,38 +15,17 @@ namespace InpText
                 bool nationalCode = ExtensionMethod.NationalCode(national_Code);
                 if (nationalCode)
                 {
-                    int index = EditPerson.Index;
                     var person = new Person();
                     person.Name = name;
                     person.lastname = lastName;
                     person.National_code = national_Code;
                     person.Gender = gender;
-                    successful = true;
                     var frm = Application.OpenForms[nameof(FrmPerson)] as FrmPerson;
-                    frm.Persson.Insert(index, person);
+                    frm.Persson.Add(person);
                     return true;
                 }
             }
             return false;
-        }
-        public static bool successful = false;
-        public static bool Successful_Operation
-        {
-            get
-            {
-                return successful;
-            }
-        }
-        public static int Index
-        {
-            get
-            {
-                return house_number;
-            }
-            set
-            {
-                house_number = value;
-            }
         }
     }
 }
